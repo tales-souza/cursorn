@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-
+	TouchableHighlight,
 	StyleSheet,
 	Text,
 	View,
@@ -22,7 +22,7 @@ export default class CenaPrincipal extends Component {
 		<View>
 			<View> 
 				<StatusBar backgroundColor = '#e6a400'/>
-				<BarraNavegacao />
+				<BarraNavegacao  />
 				<View style={styles.logo}>
 					<Image source={logo} />
 				</View>
@@ -30,12 +30,62 @@ export default class CenaPrincipal extends Component {
 
 			<View style={styles.menu}>
 				<View style={styles.menuGrupo}>
-					<Image style={styles.imgMenu} source={menuCliente} />
-					<Image style={styles.imgMenu} source={menuContato} />
+
+					<TouchableHighlight
+					underlayColor={'#B9C941'}
+					activeOpacity={0.4}
+						onPress={() => {
+							this.props.navigator.push({ id:'b' });
+						}} 
+						>
+						<Image style={styles.imgMenu} source={menuCliente} />
+					</TouchableHighlight >
+
+
+					<TouchableHighlight
+					underlayColor={'#61BD8C'}
+					activeOpacity={0.4}
+						onPress={() => {
+							this.props.navigator.push({ id:'contato' });
+						}} 
+						>
+						<Image style={styles.imgMenu} source={menuContato} />
+					</TouchableHighlight >
+
+
 				</View>
 				<View style={styles.menuGrupo}>
+
+
+
+				<TouchableHighlight
+					underlayColor={'#EC7148'}
+					activeOpacity={0.4}
+						onPress={() => {
+							this.props.navigator.push({ id:'empresa' });
+						}} 
+						>
 						<Image style={styles.imgMenu} source={menuEmpresa} />
+					</TouchableHighlight >
+
+
+						
+					
+					
+
+
+						<TouchableHighlight
+						underlayColor={'#19D1C8'}
+						activeOpacity={0.4}
+						onPress={() => {
+							this.props.navigator.push({ id:'servico' });
+						}} 
+						>
 						<Image style={styles.imgMenu} source={menuServico} />
+					</TouchableHighlight >
+
+					
+						
 				</View>
 
 			</View>
